@@ -1,9 +1,10 @@
 import type { Game } from "./model/game";
-import { createSampleGames } from "./model/sampleData";
+import type { Shelf } from "./model/shelf";
+import { createSampleShelves } from "./model/sampleData";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 
-function renderGameTable(games: Game[]): HTMLTableElement {
+function renderGameTable(games: readonly Game[]): HTMLTableElement {
   const table = document.createElement("table");
   table.innerHTML = `
     <thead>
@@ -26,5 +27,15 @@ function renderGameTable(games: Game[]): HTMLTableElement {
   return table;
 }
 
+function renderShelf(shelf: Shelf): HTMLElement {
+  const section = document.createElement("section");
+  const heading = document.createElement("h2");
+  heading.textContent = `${shelf.name} (${shelf.capacity} Plätze, ${shelf.allGames.length} belegt)`;
+  section.append(heading, renderGameTable(shelf.allGames));
+  return section;
+}
+
 app.innerHTML = "<h1>Spieleverleih</h1>";
-app.append(renderGameTable(createSampleGames()));
+for (const shelf of createSampleShelves()) {
+  app.append(renderShelf(shelf));
+}
