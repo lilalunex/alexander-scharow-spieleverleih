@@ -17,7 +17,7 @@ Ich hab mir die Aufgabe genau durchgelesen. Dabei schon mitgedacht. Polymorphie,
 
 Ich hatte geplant zu erst eine Console Version zu machen und dann eine Browser Version. Bevor ich hier aber jetzt nur auf key presses abfrage und in der Konsole alles so ... unschön aussehen wird, entscheid ich mich doch dafür zu erst die Browser Version zu machen. Als Web Dev fühl ich mich da Zuhause.
 
-Ich lass es sein, jedes Mal die README so sorgfältig zu committen. Das raubt zu viel Zeit. Aus der Arbeitswelt kenne ich auch immer nur die commit message "Update Readme".
+Ich lass es sein, jedes Mal die README so sorgfältig zu committen. Das raubt zu viel Zeit (Klassiker). Aus der Arbeitswelt kenne ich auch immer nur die commit message "Update Readme".
 
 Meine Dev Environment installiert: Vite, TypeScript, Vitest.
 
@@ -29,7 +29,11 @@ Features die mir zu "was als nächstes" einfielen, direkt notiert.
 
 Ich entscheide mich für Web Developemnt setup. Ich fühle mich hier Zuhause und das passt zu dem Einsatz von diesem Programm, da dieses wahrscheinlich von einem Browser aus bedient werden wird.
 
+Ich hab nebenbei Claude Code laufen im Root Verzeichnis vom Projekt. Und stelle Fragen und benutze es als Unterstützer beim umsetzen. Stelle Fragen sind gehen in solche Richtungen: Ich kenn mich mich Polymorphie aus, aber wenn dann Wissen mehr schwammig im Hinterkopf ist oder ich mir nicht 100% sicher bin, double check ich das oder lass mich unterstützen.
+
 ## Was würde ich als nächstes machen?
+
+- TODO: Claude über README gehen lassen.
 
 Eine Historie einbauen. Damit man nachverfolgen kann, an wen, welches Spiel, wann ausgeliehen wurde. Und diese Einträge nach (ich glaube 10 Jahren?) Datenschutz Richtlinien löschen. Für mich ein wichtiges Feature für diese Art Programm.
 
