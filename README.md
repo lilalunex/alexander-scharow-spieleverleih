@@ -27,6 +27,8 @@ In der Anleitung geschrieben wie man das Programm auf seiner Maschine ausführen
 
 Features die mir zu "was als nächstes" einfielen, direkt notiert.
 
+Ich entscheide mich für Web Developemnt setup. Ich fühle mich hier Zuhause und das passt zu dem Einsatz von diesem Programm, da dieses wahrscheinlich von einem Browser aus bedient werden wird.
+
 ## Was würde ich als nächstes machen?
 
 Eine Historie einbauen. Damit man nachverfolgen kann, an wen, welches Spiel, wann ausgeliehen wurde. Und diese Einträge nach (ich glaube 10 Jahren?) Datenschutz Richtlinien löschen. Für mich ein wichtiges Feature für diese Art Programm.
