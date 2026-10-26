@@ -25,6 +25,7 @@ export class Game {
 
   constructor(data: GameData) {
     const title = data.title.trim();
+    // Guard clauses
     if (title === "") {
       throw new ValidationError("Ein Spiel braucht einen Titel.");
     }
@@ -45,6 +46,7 @@ export class Game {
       );
     }
 
+    // crypto braucht einen sicheren Kontext: https oder localhost
     this.id = crypto.randomUUID();
     this.title = title;
     this.platform = data.platform;

@@ -1,9 +1,13 @@
 export class RentalError extends Error {
   constructor(message: string) {
+    // Unsere eigenen Fehler erben vom Programmiersprachen bestehenden Error
     super(message);
     this.name = new.target.name;
   }
 }
+
+// Je mehr eigene Fehler wir haben, desto besser können wir später debuggen
+// anstatt jeder Fehler später einfach nur ein "error" ist, wissen wir, was genau der Fehler war
 
 export class ValidationError extends RentalError {}
 
