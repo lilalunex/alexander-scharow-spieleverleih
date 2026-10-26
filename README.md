@@ -13,30 +13,38 @@ npm run dev
 
 ## Was habe ich umgesetzt
 
-Ich hab mir die Aufgabe genau durchgelesen. Dabei schon mitgedacht. Polymorphie, Datenbank Beziehungen (wie 1:n, n:m Beziehungen oder Werte atomar zu speichern).
+Ich habe mir die Aufgabe genau durchgelesen und dabei schon mitgedacht: Polymorphie, Datenbank-Beziehungen (1:n, n:m) und Werte atomar speichern.
 
-Ich hatte geplant zu erst eine Console Version zu machen und dann eine Browser Version. Bevor ich hier aber jetzt nur auf key presses abfrage und in der Konsole alles so ... unschön aussehen wird, entscheid ich mich doch dafür zu erst die Browser Version zu machen. Als Web Dev fühl ich mich da Zuhause.
+Geplant war zuerst eine Konsolen-Version und danach eine Browser-Version. In der Konsole hätte ich aber nur Tastatureingaben abgefragt, und alles hätte eher unschön ausgesehen. Deshalb habe ich direkt mit der Browser-Version angefangen. Als Webentwickler fühle ich mich da zu Hause.
 
-Ich lass es sein, jedes Mal die README so sorgfältig zu committen. Das raubt zu viel Zeit (Klassiker). Aus der Arbeitswelt kenne ich auch immer nur die commit message "Update Readme".
+Die README committe ich nicht jedes Mal sorgfältig einzeln, das kostet zu viel Zeit (Klassiker). Aus der Arbeitswelt kenne ich dafür auch meist nur die Commit-Message "Update README".
 
-Meine Dev Environment installiert: Vite, TypeScript, Vitest.
+Entwicklungsumgebung aufgesetzt: Vite, TypeScript, Vitest.
 
-In der Anleitung geschrieben wie man das Programm auf seiner Maschine ausführen kann. Die Anleitung selbst in einem separaten Verzeichnis getestet. Die nenn ich gern "del*" damit ich weiß, dass ist etwas, was ich sicher löschen kann.
+Eine Anleitung geschrieben, wie man das Programm auf dem eigenen Rechner startet. Die Anleitung habe ich in einem separaten Verzeichnis getestet. Solche Verzeichnisse nenne ich "del*", damit ich weiß, dass ich sie gefahrlos löschen kann.
 
 ## Welche Entscheidungen habe ich getroffen, und warum?
 
-Features die mir zu "was als nächstes" einfielen, direkt notiert.
+Features, die mir für "Was würde ich als Nächstes machen?" eingefallen sind, habe ich direkt notiert.
 
-Ich entscheide mich für Web Developemnt setup. Ich fühle mich hier Zuhause und das passt zu dem Einsatz von diesem Programm, da dieses wahrscheinlich von einem Browser aus bedient werden wird.
+Ich habe mich für ein Web-Development-Setup entschieden. Hier fühle ich mich zu Hause, und es passt zum Einsatzzweck: Das Programm wird in der Praxis wahrscheinlich über den Browser bedient.
 
-Ich hab nebenbei Claude Code laufen im Root Verzeichnis vom Projekt. Und stelle Fragen und benutze es als Unterstützer beim umsetzen. Stelle Fragen sind gehen in solche Richtungen: Ich kenn mich mich Polymorphie aus, aber wenn dann Wissen mehr schwammig im Hinterkopf ist oder ich mir nicht 100% sicher bin, double check ich das oder lass mich unterstützen.
+Nebenbei läuft Claude Code im Projektverzeichnis. Ich nutze es als Unterstützung bei der Umsetzung und stelle Fragen. Zum Beispiel kenne ich Polymorphie, aber wenn das Wissen eher schwammig im Hinterkopf ist oder ich mir nicht 100 % sicher bin, prüfe ich es dort nach oder lasse mir helfen.
+
+Ich lasse Claude Code Dateien und Code generieren, prüfe aber jede Datei, ob sie so ist, wie ich sie haben will. Die Konzepte, die in diesem Projekt vorkommen, kenne ich. Ich sollte also jeden Code, den ich hier finde, verstehen oder schon einmal gesehen haben.
+
+Mir ist wichtig, alles sauber Schritt für Schritt zu machen, zu verstehen, was passiert, und sicherzustellen, dass alles sauber funktioniert. Wenn schon das Setup fummelig ist und man später bei jedem Schritt eine Warnung oder Fehlermeldung sieht, ist das einfach nervig.
+
+Die Spieleranzahl speichere ich nicht als Text "1-4", sondern als zwei Werte: minPlayers und maxPlayers. Aus Erfahrung halte ich Werte atomar. Damit lässt sich leichter filtern und rechnen, und in einer Datenbank verlangt schon die erste Normalform atomare Werte.
+
+Ich committe Dateien gesondert, um die Commits sauber zu halten. Wenn also plötzlich eine große Datei auf einmal gepusht wird, heißt das nicht, dass sie gerade erst generiert wurde, sondern dass sie vorher noch nicht reif für einen Commit war.
+
+Für die Fehler Cases für den constructor in game.ts nutze ich guard clauses. Ein if nach dem anderen, was direkt den Fehler wirft. Das ist schöner Programmierstil weil er übersichtlicher ist, als viel geschachtelte if else Syntax.
 
 ## Was würde ich als nächstes machen?
 
-- TODO: Claude über README gehen lassen.
+Eine Historie einbauen, damit man nachverfolgen kann, wer welches Spiel wann ausgeliehen hat. Diese Einträge müssen nach den Datenschutzregeln (DSGVO) wieder gelöscht werden, sobald sie nicht mehr gebraucht werden. Welche Aufbewahrungsfristen genau gelten, müsste ich noch klären. Für mich ein wichtiges Feature für diese Art Programm.
 
-Eine Historie einbauen. Damit man nachverfolgen kann, an wen, welches Spiel, wann ausgeliehen wurde. Und diese Einträge nach (ich glaube 10 Jahren?) Datenschutz Richtlinien löschen. Für mich ein wichtiges Feature für diese Art Programm.
+Ein Kunde darf nur eine begrenzte Anzahl an Spielen gleichzeitig ausleihen. So kenne ich das aus der Bibliothek, und man verhindert, dass eine Person alles ausleiht, bevor der Fall überhaupt auftritt. Passend zum Spieleverleih: ein Level-System. Wer ein guter Kunde ist, steigt im Level auf und darf mehr ausleihen.
 
-Ein Kunde kann nur eine begrenzte Anzahl an Spielen ausleihen. So kenn ich das von einer Bibliothek und man verhindert, dass einer alles ausleiht. Kann den Fall also verhindern, bevor er auftritt. Passend zum Spieleverleih: Ein Level System. Wenn jemand ein guter Kunde ist, steigt er level auf und darf mehr und mehr ausleihen.
-
-Testfälle schreiben. Und hier auch die willkürlichsteen Fälle abdecken: Eingabe ist Apfel, eine negative Zahl, eine sehr hohe Zahl, etc. Um das Verhalten von meinem Programm zu kennen und daher zu wissen, wie ich es erweitern kann. Und um hier vor Hackern gewappnet zu sein (ich weiß, super special case).
+Testfälle schreiben, die auch die willkürlichsten Fälle abdecken: Die Eingabe ist "Apfel", eine negative Zahl, eine sehr hohe Zahl usw. So kenne ich das Verhalten meines Programms, weiß, wie ich es erweitern kann, und bin gegen Angriffe gewappnet (ich weiß, eher ein Spezialfall).
