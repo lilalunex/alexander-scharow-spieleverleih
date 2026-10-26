@@ -1,4 +1,6 @@
 import { Game } from "./game";
+import { GameStore } from "./gameStore";
+import { Person } from "./person";
 import { Shelf } from "./shelf";
 
 export function createSampleGames(): Game[] {
@@ -18,4 +20,24 @@ export function createSampleShelves(): Shelf[] {
   }
 
   return [consoleShelf, boardGameShelf];
+}
+
+export function createSamplePeople(): Person[] {
+  // Monate zählen in JavaScript ab 0: new Date(2009, 2, 12) ist der 12. März 2009
+  return [
+    new Person("Anna", new Date(1995, 5, 3)),
+    new Person("Max", new Date(2009, 2, 12)),  // minderjährig
+    new Person("Lena", new Date(2018, 8, 20)), // minderjährig
+  ];
+}
+
+export function createSampleStore(): GameStore {
+  const store = new GameStore();
+  for (const shelf of createSampleShelves()) {
+    store.addShelf(shelf);
+  }
+  for (const person of createSamplePeople()) {
+    store.addPerson(person);
+  }
+  return store;
 }
