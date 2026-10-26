@@ -19,6 +19,10 @@ Ich hatte geplant zu erst eine Console Version zu machen und dann eine Browser V
 
 Ich lass es sein, jedes Mal die README so sorgfältig zu committen. Das raubt zu viel Zeit. Aus der Arbeitswelt kenne ich auch immer nur die commit message "Update Readme".
 
+Meine Dev Environment installiert: Vite, TypeScript, Vitest.
+
+In der Anleitung geschrieben wie man das Programm auf seiner Maschine ausführen kann. Die Anleitung selbst in einem separaten Verzeichnis getestet. Die nenn ich gern "del*" damit ich weiß, dass ist etwas, was ich sicher löschen kann.
+
 ## Welche Entscheidungen habe ich getroffen, und warum?
 
 Features die mir zu "was als nächstes" einfielen, direkt notiert.
