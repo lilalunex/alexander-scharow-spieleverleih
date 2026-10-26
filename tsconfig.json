@@ -11,7 +11,7 @@
     "moduleResolution": "bundler",
     "noEmit": true,
     "target": "esnext",
-    "types": [],
+    "types": ["vite/client"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
