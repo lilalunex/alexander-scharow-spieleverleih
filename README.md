@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+URL im browser öffnen.
+
 ## Was habe ich umgesetzt
 
 Ich habe mir die Aufgabe genau durchgelesen und dabei schon mitgedacht: Polymorphie, Datenbank-Beziehungen (1:n, n:m) und Werte atomar speichern.
