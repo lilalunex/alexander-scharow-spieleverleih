@@ -24,10 +24,8 @@ export class ShelfFullError extends RentalError {
 }
 
 export class AgeRestrictionError extends RentalError {
-  constructor(personName: string, age: number, gameTitle: string, ageRating: number) {
-    super(
-      `${personName} ist ${age} Jahre alt, "${gameTitle}" ist aber erst ab ${ageRating} Jahren freigegeben.`,
-    );
+  constructor(personName: string, gameTitle: string, ageRating: number) {
+    super(`${personName} ist noch keine ${ageRating} Jahre alt. "${gameTitle}" ist erst ab ${ageRating} Jahren freigegeben.`);
   }
 }
 
