@@ -23,6 +23,8 @@ Entwicklungsumgebung aufgesetzt: Vite, TypeScript, Vitest.
 
 Eine Anleitung geschrieben, wie man das Programm auf dem eigenen Rechner startet. Die Anleitung habe ich in einem separaten Verzeichnis getestet. Solche Verzeichnisse nenne ich "del*", damit ich weiß, dass ich sie gefahrlos löschen kann.
 
+Ich hab mich zeitlich bisschen zu sehr in der Dokumentation verloren. An sich nichts schlechtes. Wenn man etwas gut dokumentiert, versteht es in Zukunft jeder schnell der daran arbeiten muss.
+
 ## Welche Entscheidungen habe ich getroffen, und warum?
 
 Features, die mir für "Was würde ich als Nächstes machen?" eingefallen sind, habe ich direkt notiert.
@@ -41,7 +43,11 @@ Ich committe Dateien gesondert, um die Commits sauber zu halten. Wenn also plöt
 
 Für die Fehler Cases für den constructor in game.ts nutze ich guard clauses. Ein if nach dem anderen, was direkt den Fehler wirft. Das ist schöner Programmierstil weil er übersichtlicher ist, als viel geschachtelte if else Syntax.
 
+Claude hat in person.ts eine Funktion namems ageOn angelegt. Wo er das Alter um eins reduziert, wenn der Geburtstag noch nicht war. Hab ich so noch nie gesehen. Und fand ich nicht schön. Daher habe ich mich für die neue und kürzere isOldEnoughFor Funktion entschieden.
+
 ## Was würde ich als nächstes machen?
+
+Bedienelemente (Buttons, Suchfuntkion) einbauen. Damit das UI auch steuerbar ist und nicht nur statisch.
 
 Eine Historie einbauen, damit man nachverfolgen kann, wer welches Spiel wann ausgeliehen hat. Diese Einträge müssen nach den Datenschutzregeln (DSGVO) wieder gelöscht werden, sobald sie nicht mehr gebraucht werden. Welche Aufbewahrungsfristen genau gelten, müsste ich noch klären. Für mich ein wichtiges Feature für diese Art Programm.
 
