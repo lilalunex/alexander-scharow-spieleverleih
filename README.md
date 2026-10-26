@@ -2,17 +2,28 @@
 
 ![Mittwald Logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK7mNLZq5Ex405t-zl9VOLvYYpzvMwku6r8KjWCGno&s)
 
-## Was habe ich umgesetzt, und wie starte ich das Programm?
+## Wie starte ich das Programm?
+
+```
+git clone https://github.com/lilalunex/alexander-scharow-spieleverleih.git
+cd alexander-scharow-spieleverleih
+npm install
+npm run dev
+```
+
+## Was habe ich umgesetzt
 
 Ich hab mir die Aufgabe genau durchgelesen. Dabei schon mitgedacht. Polymorphie, Datenbank Beziehungen (wie 1:n, n:m Beziehungen oder Werte atomar zu speichern).
+
+Ich hatte geplant zu erst eine Console Version zu machen und dann eine Browser Version. Bevor ich hier aber jetzt nur auf key presses abfrage und in der Konsole alles so ... unschön aussehen wird, entscheid ich mich doch dafür zu erst die Browser Version zu machen. Als Web Dev fühl ich mich da Zuhause.
+
+Ich lass es sein, jedes Mal die README so sorgfältig zu committen. Das raubt zu viel Zeit. Aus der Arbeitswelt kenne ich auch immer nur die commit message "Update Readme".
 
 ## Welche Entscheidungen habe ich getroffen, und warum?
 
 Features die mir zu "was als nächstes" einfielen, direkt notiert.
 
 ## Was würde ich als nächstes machen?
-
-Das Programm hier im Browser laufen zu lassen. Dass es später über den Browser bedient wird, ist realistisch. Daher hier logisch es auch direkt im Browser laufen lassen zu können als nur via Console.
 
 Eine Historie einbauen. Damit man nachverfolgen kann, an wen, welches Spiel, wann ausgeliehen wurde. Und diese Einträge nach (ich glaube 10 Jahren?) Datenschutz Richtlinien löschen. Für mich ein wichtiges Feature für diese Art Programm.
 
