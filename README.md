@@ -15,21 +15,19 @@ URL im browser öffnen.
 
 ## Was habe ich umgesetzt
 
-Ich habe mir die Aufgabe genau durchgelesen und dabei schon mitgedacht: Polymorphie, Datenbank-Beziehungen (1:n, n:m) und Werte atomar speichern.
+> **Kurzfassung:** Ein Spieleverleih im Browser: Spiele stehen in Regalen mit begrenzter Kapazität, lassen sich nach Titel oder Plattform durchsuchen, an Personen ausleihen und wieder zurückgeben. Beim Ausleihen wird die USK-Freigabe gegen das Geburtsdatum der Person geprüft. Fehler (zu jung, schon ausgeliehen, nicht ausgeliehen, Regal voll, ungültige Eingaben) werden als verständliche Meldung angezeigt.
 
-Geplant war zuerst eine Konsolen-Version und danach eine Browser-Version. In der Konsole hätte ich aber nur Tastatureingaben abgefragt, und alles hätte eher unschön ausgesehen. Deshalb habe ich direkt mit der Browser-Version angefangen. Als Webentwickler fühle ich mich da zu Hause.
+Ich habe mir die Aufgabe genau durchgelesen. Erst mal ein Plan machen bevor man drauf lostippt. Dabei fallen mir schon vorher Umstände auf wie: Polymorphie, Datenbank-Beziehungen (1:n, n:m), Werte atomar speichern.
 
-Die README committe ich nicht jedes Mal sorgfältig einzeln, das kostet zu viel Zeit (Klassiker). Aus der Arbeitswelt kenne ich dafür auch meist nur die Commit-Message "Update README".
+Geplant war zuerst eine Konsolen-Version und danach eine Browser-Version. In der Konsole hätte ich aber nur Tastatureingaben abgefragt und zeit verbracht, in der Konsole etwas ansichtlich zu stylen. Deshalb habe ich direkt mit der Browser-Version angefangen. Als Webentwickler fühle ich mich da zu Hause. Und der Browser ist wahrscheinlich das Dashboard, was man am Ende benutzen wird. Passt daher also.
 
 Entwicklungsumgebung aufgesetzt: Vite, TypeScript, Vitest.
 
 Eine Anleitung geschrieben, wie man das Programm auf dem eigenen Rechner startet. Die Anleitung habe ich in einem separaten Verzeichnis getestet. Solche Verzeichnisse nenne ich "del*", damit ich weiß, dass ich sie gefahrlos löschen kann.
 
-Ich hab mich zeitlich bisschen zu sehr in der Dokumentation verloren. An sich nichts schlechtes. Wenn man etwas gut dokumentiert, versteht es in Zukunft jeder schnell der daran arbeiten muss.
-
 ## Welche Entscheidungen habe ich getroffen, und warum?
 
-Features, die mir für "Was würde ich als Nächstes machen?" eingefallen sind, habe ich direkt notiert.
+Features, die mir für "Was würde ich als Nächstes machen?" eingefallen sind, habe ich direkt notiert im nachfolgenden Abschnitt.
 
 Ich habe mich für ein Web-Development-Setup entschieden. Hier fühle ich mich zu Hause, und es passt zum Einsatzzweck: Das Programm wird in der Praxis wahrscheinlich über den Browser bedient.
 
@@ -43,15 +41,15 @@ Die Spieleranzahl speichere ich nicht als Text "1-4", sondern als zwei Werte: mi
 
 Ich committe Dateien gesondert, um die Commits sauber zu halten. Wenn also plötzlich eine große Datei auf einmal gepusht wird, heißt das nicht, dass sie gerade erst generiert wurde, sondern dass sie vorher noch nicht reif für einen Commit war.
 
-Für die Fehler Cases für den constructor in game.ts nutze ich guard clauses. Ein if nach dem anderen, was direkt den Fehler wirft. Das ist schöner Programmierstil weil er übersichtlicher ist, als viel geschachtelte if else Syntax.
+Für die Fehlerfälle im Konstruktor von game.ts nutze ich Guard Clauses: ein if nach dem anderen, das direkt den Fehler wirft. Das ist übersichtlicher als verschachtelte if-else-Blöcke, weil der Code flach bleibt.
 
-Claude hat in person.ts eine Funktion namems ageOn angelegt. Wo er das Alter um eins reduziert, wenn der Geburtstag noch nicht war. Hab ich so noch nie gesehen. Und fand ich nicht schön. Daher habe ich mich für die neue und kürzere isOldEnoughFor Funktion entschieden.
+In person.ts gab es zuerst eine Funktion ageOn, die das Alter berechnet (üblicher Ansatz: Jahre abziehen, minus eins, wenn der Geburtstag noch nicht war). Ich habe mich stattdessen für isOldEnoughFor entschieden: Sie rechnet aus, ab wann die Person alt genug ist, und vergleicht das mit heute. Das beantwortet direkt die Frage aus der Aufgabe und ist kürzer.
 
 ## Was würde ich als nächstes machen?
 
-Bedienelemente (Buttons, Suchfuntkion) einbauen. Damit das UI auch steuerbar ist und nicht nur statisch.
-
 Eine Historie einbauen, damit man nachverfolgen kann, wer welches Spiel wann ausgeliehen hat. Diese Einträge müssen nach den Datenschutzregeln (DSGVO) wieder gelöscht werden, sobald sie nicht mehr gebraucht werden. Welche Aufbewahrungsfristen genau gelten, müsste ich noch klären. Für mich ein wichtiges Feature für diese Art Programm.
+
+Formulare, um neue Spiele, Regale und Personen über die Oberfläche anzulegen. Im Moment kommen sie aus den Beispieldaten.
 
 Ein Kunde darf nur eine begrenzte Anzahl an Spielen gleichzeitig ausleihen. So kenne ich das aus der Bibliothek, und man verhindert, dass eine Person alles ausleiht, bevor der Fall überhaupt auftritt. Passend zum Spieleverleih: ein Level-System. Wer ein guter Kunde ist, steigt im Level auf und darf mehr ausleihen.
 
